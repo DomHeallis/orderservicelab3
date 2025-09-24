@@ -24,7 +24,6 @@ app.post('/orders', (req, res) => {
       // If an error occurs while connecting to RabbitMQ, send a 500 status and error message.
       return res.status(500).send('Error connecting to RabbitMQ');
     }
-
     // Once connected to RabbitMQ, create a channel to communicate with it.
     conn.createChannel((err, channel) => {
       if (err) {
